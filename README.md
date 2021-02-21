@@ -1,6 +1,6 @@
 ## RNCharts
 
-Custom charts built with react-native-svg@7.2.1
+React native (0.63.4) project featuring custom charts built with react-native-svg@7.2.1
 
 ### Charts
 
