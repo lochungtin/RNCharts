@@ -7,15 +7,20 @@ export default class App extends React.Component {
 
     render() {
         const data = [
-            { svg: { fill: '#906030', onPress: () => console.log(1) }, value: 10 },
-            { svg: { fill: '#309060', onPress: () => console.log(2) }, value: 10 },
-            { svg: { fill: '#603090', onPress: () => console.log(3) }, value: 10 },
+            { svg: { fill: '#906030', onPress: () => console.log(1) }, },
+            { svg: { fill: '#903060', onPress: () => console.log(2) }, },
+            { svg: { fill: '#603090', onPress: () => console.log(3) }, },
+            { svg: { fill: '#609030', onPress: () => console.log(4) }, },
+            { svg: { fill: '#309060', onPress: () => console.log(5) }, },
+            { svg: { fill: '#306090', onPress: () => console.log(6) }, },
         ];
+
+        data.forEach(item => item.value = Math.round(Math.random() * 10));
 
         return (
             <View style={styles.container} >
                 <StatusBar style="auto" />
-                <PieChart 
+                <PieChart
                     data={data}
                     dim={200}
                     width={0.4}
