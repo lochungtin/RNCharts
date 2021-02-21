@@ -1,5 +1,5 @@
-import React from 'react';
 import * as shape from 'd3-shape';
+import React from 'react';
 import Svg, { G, Path, } from 'react-native-svg';
 
 export default class PieChart extends React.Component {
@@ -21,8 +21,6 @@ export default class PieChart extends React.Component {
                             const { key, onPress, svg } = this.props.data[index]
                             return (
                                 <Path
-                                    key={key}
-                                    onPress={onPress}
                                     {...svg}
                                     d={shape
                                         .arc()
@@ -30,6 +28,8 @@ export default class PieChart extends React.Component {
                                         .innerRadius((this.props.dim / 2) * 0.6)
                                         .padAngle(0.05)(slice)
                                     }
+                                    key={key}
+                                    onPress={onPress}
                                 />
                             );
                         })

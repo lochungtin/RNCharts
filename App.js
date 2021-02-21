@@ -18,7 +18,6 @@ export default class App extends React.Component {
                 <PieChart 
                     data={data}
                     dim={200}
-                    valueAccessor={({ item }) => item.value} 
                 />
             </View>
         );
