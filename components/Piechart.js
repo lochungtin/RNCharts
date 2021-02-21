@@ -19,6 +19,7 @@ export default class PieChart extends React.Component {
                         .endAngle(Math.PI * 2)(this.props.data)
                         .map((slice, index) => {
                             const { onPress, svg } = this.props.data[index];
+                            console.log(onPress, svg);
                             return (
                                 <Path
                                     {...svg}

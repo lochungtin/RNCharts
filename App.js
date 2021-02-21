@@ -7,12 +7,12 @@ export default class App extends React.Component {
 
     render() {
         const data = [
-            { svg: { fill: '#906030', onPress: () => console.log(1) }, },
-            { svg: { fill: '#903060', onPress: () => console.log(2) }, },
-            { svg: { fill: '#603090', onPress: () => console.log(3) }, },
-            { svg: { fill: '#609030', onPress: () => console.log(4) }, },
-            { svg: { fill: '#309060', onPress: () => console.log(5) }, },
-            { svg: { fill: '#306090', onPress: () => console.log(6) }, },
+            { svg: { fill: '#906030' }, onPress: () => console.log(1) },
+            { svg: { fill: '#903060' }, onPress: () => console.log(2) },
+            { svg: { fill: '#603090' }, onPress: () => console.log(3) },
+            { svg: { fill: '#609030' }, onPress: () => console.log(4) },
+            { svg: { fill: '#309060' }, onPress: () => console.log(5) },
+            { svg: { fill: '#306090' }, onPress: () => console.log(6) },
         ];
 
         data.forEach(item => item.value = Math.round(Math.random() * 10) + 5);
