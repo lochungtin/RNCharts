@@ -7,9 +7,9 @@ export default class App extends React.Component {
 
     render() {
         const data = [
-            { svg: { fill: '#906030', onPress: () => console.log(1) }, value: 10, key: 1 },
-            { svg: { fill: '#309060', onPress: () => console.log(2) }, value: 10, key: 2 },
-            { svg: { fill: '#603090', onPress: () => console.log(3) }, value: 10, key: 3 },
+            { svg: { fill: '#906030', onPress: () => console.log(1) }, value: 10 },
+            { svg: { fill: '#309060', onPress: () => console.log(2) }, value: 10 },
+            { svg: { fill: '#603090', onPress: () => console.log(3) }, value: 10 },
         ];
 
         return (
@@ -18,6 +18,7 @@ export default class App extends React.Component {
                 <PieChart 
                     data={data}
                     dim={200}
+                    width={0.4}
                 />
             </View>
         );
