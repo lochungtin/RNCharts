@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View, } from 'react-native';
+import { StyleSheet, Text, View, } from 'react-native';
 import PieChart from './components/Piechart';
+import ProgressCircle from './components/ProgressCircle';
 
 export default class App extends React.Component {
 
@@ -23,7 +24,15 @@ export default class App extends React.Component {
                 <PieChart
                     data={data}
                     dim={200}
-                    width={0.4}
+                    width={0.2}
+                />
+                <View style={{ height: 100 }} />
+                <ProgressCircle
+                    dim={200}
+                    progressColor={'#dbca46'}
+                    progress={0.3}
+                    strokeWidth={5}
+                    trackColor={'#3e3e3e'}
                 />
             </View>
         );

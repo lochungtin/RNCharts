@@ -2,11 +2,13 @@ import * as shape from 'd3-shape';
 import React from 'react';
 import { G, Path, Svg, } from 'react-native-svg';
 
-export default class PieChart extends React.Component {
+export default class ProgressCircle extends React.Component {
 
     render() {
-        if (this.props.data.length === 0)
-            return <View style={{ height: this.props.dim, width: this.props.width }} />;
+        const data = [
+            { svg: { fill: this.props.trackColor }, value: 1 - this.props.progress, },
+            { svg: { fill: this.props.progressColor }, value: this.props.progress },
+        ];
 
         return (
             <Svg style={{ height: this.props.dim, width: this.props.dim }}>
@@ -14,22 +16,21 @@ export default class PieChart extends React.Component {
                     {shape
                         .pie()
                         .value(obj => obj.value)
-                        .sort((a, b) => b.value - a.value)
+                        .sort((a, b) => a.value - b.value)
                         .startAngle(0)
-                        .endAngle(Math.PI * 2)(this.props.data)
+                        .endAngle(Math.PI * 2)(data)
                         .map((slice, index) => {
-                            const { onPress, svg } = this.props.data[index];
+                            const { svg } = data[index];
                             return (
                                 <Path
                                     {...svg}
-                                    d={shape
-                                        .arc()
-                                        .outerRadius(this.props.dim / 2)
-                                        .innerRadius((this.props.dim / 2) * (1 - this.props.width))
-                                        .padAngle(0.05)(slice)
+                                    d={
+                                        shape
+                                            .arc()
+                                            .outerRadius(this.props.dim / 2)
+                                            .innerRadius(this.props.dim / 2 - this.props.strokeWidth)(slice)
                                     }
                                     key={index}
-                                    onPress={onPress}
                                 />
                             );
                         })
