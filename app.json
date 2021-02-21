@@ -1,0 +1,12 @@
+{
+  "name": "RNCharts",
+  "displayName": "RNCharts",
+  "expo": {
+    "name": "RNCharts",
+    "slug": "RNCharts",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
