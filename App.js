@@ -15,7 +15,7 @@ export default class App extends React.Component {
             { svg: { fill: '#306090', onPress: () => console.log(6) }, },
         ];
 
-        data.forEach(item => item.value = Math.round(Math.random() * 10));
+        data.forEach(item => item.value = Math.round(Math.random() * 10) + 5);
 
         return (
             <View style={styles.container} >
