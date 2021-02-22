@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
-import PieChart from './components/Piechart';
+import { StyleSheet, View, } from 'react-native';
+import PieChart from './components/PieChart';
 import ProgressCircle from './components/ProgressCircle';
 
 export default class App extends React.Component {
@@ -30,7 +30,7 @@ export default class App extends React.Component {
                 <ProgressCircle
                     dim={200}
                     progressColor={'#dbca46'}
-                    progress={0.3}
+                    progress={0.2}
                     strokeWidth={5}
                     trackColor={'#3e3e3e'}
                 />
